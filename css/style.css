@@ -1,0 +1,66 @@
+:root{
+    font-size: 14px;
+}
+
+.bg-pcolor{
+    background-color: #1e202b;
+}
+
+.bg-scolor{
+    background-color: #323544;
+}
+
+/* Navigation Bar */
+#tagLine{
+    font-size: 0.7em;
+}
+
+.nav-link.active{
+    color: #0b5ed7 !important;
+    border: 2px solid #0b5ed7;
+    border-radius: 30px;
+}
+
+/* Search Section */
+#searchSection{
+    background-image: url("../imgs/banner.png");
+    background-position: center;
+    background-size: cover;
+    min-height: 350px;
+}
+
+#searchBtn,
+#subscribeBtn{
+    position: absolute;
+    top: 5px;
+    bottom: 5px;
+    right: 5px;
+}
+
+/* Table Section */
+#tableSection .row{
+    top: -100px
+}
+
+img[alt="Current Condition"] {
+    width: 100px;
+    height: 100px;
+}
+
+img[alt="Tomorrow Condition"],
+img[alt="After Tomorrow Condition"] {
+    width: 50px;
+    height: 50px;
+}
+
+/* Footer Section */
+.social-link{
+    width: 40px;
+    height: 40px;
+    transition: 0.5s all;
+}
+
+.social-link:hover{
+    background-color: #009ad8;
+    color: #fff !important;
+}

@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+
+    <!-- Linking External Files -->
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+    <div class="wrapper">
+
+        <!-- Navigation Bar -->
+        <header>
+            <nav class="navbar navbar-dark navbar-expand-md py-4 bg-pcolor">
+                <div class="container">
+                    <a class="navbar-brand d-flex align-items-center">
+                        <div class="brand">
+                            <img src="imgs/logo.png" alt="Application Logo">
+                        </div>
+                        <div class="d-flex flex-column px-3">
+                            <span class="fs-6 fw-bold text-white">Weather</span>
+                            <span id="tagLine" class="text-secondary-emphasis">tagline goes here</span>
+                        </div>
+                    </a>
+
+                    <button class="navbar-toggler text-primary border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navList" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- Navigation List -->
+                    <div class="collapse navbar-collapse justify-content-end" id="navList">
+                        <ul class="navbar-nav text-center my-3">
+                            <li class="nav-item ms-md-5">
+                                <a href="index.html" class="nav-link text-white px-4 py-1 active">Home</a>
+                            </li>
+                            <li class="nav-item ms-md-5">
+                                <a href="" class="nav-link text-white px-4 py-1">News</a>
+                            </li>
+                            <li class="nav-item ms-md-5">
+                                <a href="" class="nav-link text-white px-4 py-1">Live Cameras</a>
+                            </li>
+                            <li class="nav-item ms-md-5">
+                                <a href="" class="nav-link text-white px-4 py-1">Photos</a>
+                            </li>
+                            <li class="nav-item ms-md-5">
+                                <a href="contact.html" class="nav-link text-white px-4 py-1">Contact</a>
+                            </li>
+                        </ul>
+                    </div>
+            </nav>
+        </header>
+
+        <!-- Search Section -->
+        <section id="searchSection">
+            <div class="container">
+                <div  class="py-5">
+
+                    <div class="mx-0 mx-md-5 my-5 position-relative">
+                        <input type="text" name="search" id="search" placeholder="Find your location..." class="w-100 p-4 border-0 rounded-pill bg-pcolor text-white">
+                        <button type="submit" class="btn btn-primary px-5 rounded-pill" id="searchBtn">Find</button>
+                    </div>
+                
+                </div>
+            </div>
+        </section>
+
+        <!-- Table Section -->
+        <section id="tableSection">
+            <div class="bg-pcolor p-3">
+                <div class="container">
+
+                    <div class="row bg-scolor rounded-3 position-relative g-0">
+                        <div class="col-md-4">
+                            
+                            <div id="day0">
+                                <div class="card-header text-white-50 p-2">
+                                    <div>
+                                        <span class="day"></span>
+                                        <span class="date float-end"></span>
+                                    </div>
+                                </div>
+
+                                <div class="card-content text-white px-3 py-4 d-flex flex-column">
+                                    <span id="location" class="text-secondary fs-4">--</span>
+                                    <span id="currentTemp" class="display-1 fw-bold my-4">--</span>
+                                    <img src="" alt="Current Condition">
+                                    <span class="text-primary my-4">--</span>
+
+                                    <div>
+                                        <span class="me-3 wind">--%</span>
+                                        <span class="me-3 wind">--km/h</span>
+                                        <span class="me-3 wind">--</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <div id="day1" class="bg-pcolor h-100 text-center">
+                                <div class="card-header text-white-50 p-2">
+                                    <div>
+                                        <span class="day"></span>
+                                    </div>
+                                </div>
+
+                                <div class="card-content text-white px-3 py-4 d-flex flex-column align-items-center">
+                                    <img src="" alt="Tomorrow Condition">
+                                    <span class="fw-bold fs-2 maxTemp">--</span>
+                                    <span class="text-secondary fs-4 minTemp">--</span>
+                                    <span class="text-primary mt-4">--</span>
+                                </div>
+                            </div>
+
+                        </div>
+
+                        <div class="col-md-4">
+
+                            <div id="day2" class="h-100 text-center">
+                                <div class="card-header text-white-50 p-2">
+                                    <div>
+                                        <span class="day"></span>
+                                    </div>
+                                </div>
+
+                                <div class="card-content text-white px-3 py-4 d-flex flex-column align-items-center">
+                                    <img src="" alt="After Tomorrow Condition">
+                                    <span class="fw-bold fs-2 maxTemp">--</span>
+                                    <span class="text-secondary fs-4 minTemp">--</span>
+                                    <span class="text-primary mt-4">--</span>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer Section -->
+        <footer>
+            <div class="bg-scolor py-4">
+                <div class="container">
+
+                    <div class="row pt-5 mb-4 d-flex">
+                        <div class="col-md-8">
+
+                            <div class="position-relative">
+                                <input type="text" name="subscribe" id="subscribe" placeholder="Enter your email to subscribe..." class="w-100 p-4 border-0 rounded-pill bg-pcolor text-white">
+                                <button type="submit" class="btn btn-primary px-4 rounded-pill" id="subscribeBtn">Subscribe</button>
+                            </div>
+                            
+                            <p class="text-white-50 pt-4">Copyright 2014 Company name. Designed by Themezy. All rights reserved</p>
+                        </div>
+
+                        <div class="col-md-3 offset-md-1">
+
+                            <div class="">
+                                <a href="" class="text-decoration-none text-primary rounded-circle bg-pcolor social-link d-inline-flex justify-content-center align-items-center fs-5">
+                                    <i class="fa-brands fa-facebook-f"></i>
+                                </a>
+                                <a href="" class="text-decoration-none text-primary rounded-circle bg-pcolor social-link d-inline-flex justify-content-center align-items-center fs-5">
+                                    <i class="fa-brands fa-twitter"></i>
+                                </a>
+                                <a href="" class="text-decoration-none text-primary rounded-circle bg-pcolor social-link d-inline-flex justify-content-center align-items-center fs-5">
+                                    <i class="fa-brands fa-google-plus-g"></i>
+                                </a>
+                                <a href="" class="text-decoration-none text-primary rounded-circle bg-pcolor social-link d-inline-flex justify-content-center align-items-center fs-5">
+                                    <i class="fa-brands fa-pinterest"></i>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
