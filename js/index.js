@@ -1,33 +1,50 @@
 "use strict"
 
-let days = [
-    "Sunday",
-    "Monday",
-    "Tuesday",
-    "Wednesday",
-    "Thursday",
-    "Friday",
-    "Saturday"
-];
 
-let months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December"
-];
+function setDate() {
+    let days = [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+    ];
+
+    let months = [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+    ];
+
+    let day = document.querySelectorAll(".day");
+
+    // Using Date Object
+    let d = new Date();
+
+    day[0].innerHTML = days[d.getDay()];
+    // Ternary Condition
+    day[1].innerHTML = days[(d.getDay() + 1 < days.length)? 
+        d.getDay() + 1 : d.getDay() + 1 - days.length];
+    day[2].innerHTML = days[(d.getDay() + 2 < days.length)?
+        d.getDay() + 2 : d.getDay() + 2 - days.length];
+    day[0].nextElementSibling.innerHTML = d.getDate() + months[d.getMonth()];
+};
+
+setDate();
 
 // Reaching HTML Elements
 let search = document.querySelector("#search");
-let day = document.querySelectorAll(".day");
 let currentTemp = document.querySelector("#currentTemp");
 let condition = document.querySelectorAll(".condition");
 let wind = document.querySelectorAll(".wind");
@@ -40,15 +57,7 @@ let position = {};
 let current = {};
 let forecast = [];
 
-// Using Date Object
-let d = new Date();
-day[0].innerHTML = days[d.getDay()];
-// Ternary Condition
-day[1].innerHTML = days[(d.getDay() + 1 < days.length)? 
-    d.getDay() + 1 : d.getDay() + 1 - days.length];
-day[2].innerHTML = days[(d.getDay() + 2 < days.length)?
-    d.getDay() + 2 : d.getDay() + 2 - days.length];
-day[0].nextElementSibling.innerHTML = d.getDate() + months[d.getMonth()];
+
 
 // Interacting With The API
 async function apiReq(q) {
